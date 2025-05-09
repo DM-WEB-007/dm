@@ -17,8 +17,9 @@
       }
     }
   </script>
-</head>
-<body class="font-sans pt-36">
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  
   <style>
     @media (max-width: 767px) {
       #topBar {
@@ -27,9 +28,20 @@
       #mainNav {
         top: 0 !important;
       }
+
+      /* Telegram Icon Styling */
+      .telegram-icon {
+        display: block; /* Show Telegram icon on small screens */
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%; /* Adjust as needed */
+        z-index: 10;
+      }
     }
   </style>
-  
+</head>
+<body class="font-sans pt-36">
   <!-- Top Bar -->
   <div id="topBar" class="bg-blue-100 text-sm fixed top-0 w-full z-50 transition-all duration-300 hidden md:block">
     <div class="max-w-screen-xl mx-auto px-4 py-2 flex justify-between items-center">
@@ -53,39 +65,49 @@
     </div>
   </div>
 
-  <!-- Main Navbar -->
-  <nav id="mainNav" class="bg-white shadow fixed top-10 w-full z-40 transition-all duration-300">
-    <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- Logo -->
-      <div class="flex items-center gap-2">
-        <img src="img/logo.png" alt="DM007 Logo" class="w-[129px] h-auto mt-[10px]" />
-      </div>
-      <!-- Menu Links -->
-      <ul class="hidden md:flex gap-6 text-lg text-black font-medium">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skill">Skill</a></li>
-      </ul>
-
-      <!-- Hamburger Icon -->
-      <div class="md:hidden">
-        <button id="toggleMenuBtn" class="text-2xl focus:outline-none">☰</button>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="hidden md:flex items-center gap-3">
-        <button class="border border-dark text-dark px-4 py-2 rounded hover:bg-dark hover:text-white transition">
-          Contact
-        </button>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-          Ready Project
-        </button>
-        <button class="border border-black p-2 rounded hover:bg-gray-100">
-          🛒
-        </button>
-      </div>
+<!-- Main Navbar -->
+<nav id="mainNav" class="bg-white shadow fixed top-10 w-full z-40 transition-all duration-300">
+  <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center relative">
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img src="img/logo.png" alt="DM007 Logo" class="w-[129px] h-auto mt-[10px]" />
     </div>
-  </nav>
+
+    <!-- Telegram Icon in the middle -->
+    <div class="absolute left-1/2 transform -translate-x-1/2 md:hidden">
+      <a href="https://t.me/yourusername" target="_blank">
+        <i class="fab fa-telegram-plane text-3xl text-blue-500"></i> <!-- Smaller Telegram icon size -->
+      </a>
+    </div>
+
+    <!-- Menu Links -->
+    <ul class="hidden md:flex gap-6 text-lg text-black font-medium">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skill">Skill</a></li>
+    </ul>
+
+    <!-- Hamburger Icon -->
+    <div class="md:hidden">
+      <button id="toggleMenuBtn" class="text-2xl focus:outline-none">☰</button>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="hidden md:flex items-center gap-3">
+      <button class="border border-dark text-dark px-4 py-2 rounded hover:bg-dark hover:text-white transition">
+        Contact
+      </button>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+        Ready Project
+      </button>
+      <button class="border border-black p-2 rounded hover:bg-gray-100">
+        🛒
+      </button>
+    </div>
+  </div>
+</nav>
+
+
 
   <!-- Mobile Menu -->
   <div id="mobileMenu" class="fixed top-0 right-0 w-3/4 bg-white shadow-lg z-40 h-full md:hidden transform translate-x-full transition-transform duration-300">
