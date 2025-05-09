@@ -17,10 +17,18 @@
       }
     }
   </script>
-  <!-- Font Awesome CDN -->
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
   <style>
+    /* Increased icon size */
+    .icon {
+      font-size: 22px; /* Adjusted icon size */
+      transition: 0.3s ;
+    }
+
+    /* Hover effect */
+   
     @media (max-width: 767px) {
       #topBar {
         display: none !important;
@@ -37,20 +45,20 @@
     <div class="max-w-screen-xl mx-auto px-4 py-2 flex justify-between items-center">
       <div class="flex items-center gap-4 text-dark">
         <div class="flex items-center gap-1">
-          <span class="bg-dark text-white p-1 rounded">✉️</span>
+          <span class="bg-dark text-white p-1 rounded"><i class="fas fa-envelope text-xs"></i></span>
           <span>dmraihan0007@gmail.com</span>
         </div>
         <div class="flex items-center gap-1">
-          <span class="bg-dark text-white p-1 rounded">📞</span>
+          <span class="bg-dark text-white p-1 rounded"><i class="fas fa-phone text-xs"></i></span>
           <span>+880 1300573753</span>
         </div>
       </div>
-      <div class="flex gap-2">
-        <a href="#" class="bg-dark text-white p-1 rounded">📘</a>
-        <a href="#" class="bg-dark text-white p-1 rounded">🔗</a>
-        <a href="#" class="bg-dark text-white p-1 rounded">▶️</a>
-        <a href="#" class="bg-dark text-white p-1 rounded">💬</a>
-        <a href="#" class="bg-dark text-white p-1 rounded">✈️</a>
+      <div class="flex items-center gap-6 text-dark text-lg">
+        <a href="#" class="icon hover:text-red-600"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="icon hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="icon hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="icon hover:text-blue-400"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#" class="icon hover:text-green-600"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </div>
@@ -63,28 +71,32 @@
         <img src="img/logo.png" alt="DM007 Logo" class="w-[129px] h-auto mt-[10px]" />
       </div>
 
-      <!-- Telegram Icon in the middle (mobile only) -->
+      <!-- Telegram Icon in the middle -->
       <div class="absolute left-1/2 transform -translate-x-1/2 md:hidden">
-        <a href="https://t.me/DMweb007" target="_blank">
+        <a href="https://t.me/DMweb007" target="_blank" style="font-size: 30px; margin-left: 30px;">
           <i class="fab fa-telegram-plane text-2xl text-blue-500"></i>
+          <i class="fab fa-youtube text-2xl text-red-600"></i>
         </a>
       </div>
 
-      <!-- Menu Links -->
-      <ul class="hidden md:flex gap-6 text-lg text-black font-medium">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skill">Skill</a></li>
-      </ul>
-
-      <!-- Hamburger / Close Icon -->
+      <!-- Hamburger/X Toggle -->
       <div class="md:hidden">
-        <button id="toggleMenuBtn" class="text-2xl focus:outline-none">
-          <i id="menuIcon" class="fas fa-bars"></i>
+        <button id="toggleMenuBtn" class="text-2xl font-bold focus:outline-none">
+          <i id="toggleIcon" class="fas fa-bars"></i>
         </button>
       </div>
 
-      <!-- Action Buttons -->
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex gap-6 text-lg text-black font-medium">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#about">Services</a></li>
+        <li><a href="#about">Skills</a></li>
+        <li><a href="#skill">Projects</a></li>
+        <li><a href="#skill">Teams</a></li>
+      </ul>
+
+      <!-- Desktop Action Buttons -->
       <div class="hidden md:flex items-center gap-3">
         <button class="border border-dark text-dark px-4 py-2 rounded hover:bg-dark hover:text-white transition">
           Contact
@@ -100,7 +112,7 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="fixed top-[72px] right-0 w-3/4 bg-white shadow-lg z-30 h-full md:hidden transform translate-x-full transition-transform duration-300">
+  <div id="mobileMenu" class="fixed top-[70px] right-0 w-3/4 bg-white shadow-lg z-40 h-full md:hidden transform translate-x-full transition-transform duration-300">
     <div class="px-4 py-6 flex flex-col gap-6 text-lg text-black font-medium">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -126,12 +138,12 @@
     <p>This is the skill section.</p>
   </section>
 
-  <!-- Scroll + Toggle Script -->
+  <!-- Scroll and Toggle Script -->
   <script>
     const topBar = document.getElementById('topBar');
     const mainNav = document.getElementById('mainNav');
     const toggleBtn = document.getElementById('toggleMenuBtn');
-    const menuIcon = document.getElementById('menuIcon');
+    const toggleIcon = document.getElementById('toggleIcon');
     const mobileMenu = document.getElementById('mobileMenu');
     let lastScroll = 0;
 
@@ -152,12 +164,18 @@
     toggleBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('translate-x-full');
       mobileMenu.classList.toggle('translate-x-0');
+
+      // Toggle icon
+      if (toggleIcon.classList.contains('fa-bars')) {
+        toggleIcon.classList.remove('fa-bars');
+        toggleIcon.classList.add('fa-times');
+      } else {
+        toggleIcon.classList.remove('fa-times');
+        toggleIcon.classList.add('fa-bars');
+      }
+
       topBar.classList.add('hidden');
       mainNav.classList.replace('top-10', 'top-0');
-
-      // Toggle menu icon
-      menuIcon.classList.toggle('fa-bars');
-      menuIcon.classList.toggle('fa-times');
     });
   </script>
 </body>
