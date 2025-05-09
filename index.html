@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DM007 Header</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
   <script>
     tailwind.config = {
       theme: {
@@ -20,26 +21,8 @@
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
-  <style>
-    /* Increased icon size */
-    .icon {
-      font-size: 22px; /* Adjusted icon size */
-      transition: 0.3s ;
-    }
-
-    /* Hover effect */
-   
-    @media (max-width: 767px) {
-      #topBar {
-        display: none !important;
-      }
-      #mainNav {
-        top: 0 !important;
-      }
-    }
-  </style>
 </head>
-<body class="font-sans pt-36">
+<body class="font-sans ">
   <!-- Top Bar -->
   <div id="topBar" class="bg-blue-100 text-sm fixed top-0 w-full z-50 transition-all duration-300 hidden md:block">
     <div class="max-w-screen-xl mx-auto px-4 py-2 flex justify-between items-center">
@@ -86,7 +69,7 @@
           </a>
           
           <!-- Buy Me a Coffee Icon (Custom) -->
-          <a href="https://www.buymeacoffee.com/yourusername" target="_blank" >
+          <a href="https://buymeacoffee.com/abcdesigner/extras" target="_blank" >
             <img src="img/buymeacoffee.png" alt="Buy Me a Coffee" style="max-height: 24px; max-width: 24px; object-fit: cover;" />
           </a>
         </div>
@@ -136,11 +119,86 @@
     </div>
   </div>
 
-  <!-- Page Content -->
-  <section id="home" class="max-w-screen-xl mx-auto px-4 py-20">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Home</h1>
-    <p>This is the home section of your site.</p>
-  </section>
+
+
+
+
+
+
+
+<!-- Home Page -->
+
+
+
+<!-- Home Section -->
+<section id="home" class="pt-40 flex items-center justify-center bg-white">
+  <div class="max-w-7xl w-full mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+    
+    <!-- Left Content -->
+    <div class="md:w-1/2 space-y-4">
+      <p class="text-lg text-gray-600">Hey, This is</p>
+      <h1 class="text-5xl font-extrabold text-indigo-950">DM RAIHAN</h1>
+      <h2 class="text-xl flex items-center">
+        I’m a
+        <span id="typing" class="bg-yellow-400 px-2 py-1 font-semibold rounded ml-2 text-indigo-900"></span>
+      </h2>
+      <p class="text-base text-gray-700 text-3xl">
+        with a keen eye for detail and a passion for crafting responsive, high-performance websites
+        that deliver seamless user experiences.
+      </p>
+      <div class="flex space-x-4 pt-4">
+        <button class="px-4 py-2 border border-indigo-900 text-indigo-900 rounded hover:bg-indigo-100">
+          Recent Works
+        </button>
+        <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+          YouTube Tutorials
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Image Carousel -->
+    <div class="md:w-1/2 mt-10 md:mt-0 text-center">
+      <div class="highlight-frame inline-block">
+        <div class="swiper w-60 h-72">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/p.png" class="w-full h-full object-cover rounded" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/p.png" class="w-full h-full object-cover rounded" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/p.png" class="w-full h-full object-cover rounded" />
+            </div>
+          </div>
+          <div class="swiper-pagination mt-2"></div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="flex justify-center space-x-6 mt-4">
+        <div class="px-4 py-2 border-2 border-indigo-900 rounded-lg text-center">
+          <p class="text-red-600 font-bold text-lg">7+</p>
+          <p class="text-indigo-900">Years of experience</p>
+        </div>
+        <div class="px-4 py-2 border-2 border-indigo-900 rounded-lg text-center">
+          <p class="text-red-600 font-bold text-lg">130+</p>
+          <p class="text-indigo-900">Completed Projects</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
 
   <section id="about" class="max-w-screen-xl mx-auto px-4 py-20 bg-gray-100">
     <h2 class="text-3xl font-bold mb-4">About</h2>
@@ -153,44 +211,12 @@
   </section>
 
   <!-- Scroll and Toggle Script -->
-  <script>
-    const topBar = document.getElementById('topBar');
-    const mainNav = document.getElementById('mainNav');
-    const toggleBtn = document.getElementById('toggleMenuBtn');
-    const toggleIcon = document.getElementById('toggleIcon');
-    const mobileMenu = document.getElementById('mobileMenu');
-    let lastScroll = 0;
+   <!-- Swiper Carousel Script -->
+    
+<script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-
-      if (currentScroll > lastScroll && currentScroll > 50) {
-        topBar.classList.add('opacity-0', 'pointer-events-none');
-        mainNav.classList.replace('top-10', 'top-0');
-      } else {
-        topBar.classList.remove('opacity-0', 'pointer-events-none');
-        mainNav.classList.replace('top-0', 'top-10');
-      }
-
-      lastScroll = currentScroll;
-    });
-
-    toggleBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('translate-x-full');
-      mobileMenu.classList.toggle('translate-x-0');
-
-      // Toggle icon
-      if (toggleIcon.classList.contains('fa-bars')) {
-        toggleIcon.classList.remove('fa-bars');
-        toggleIcon.classList.add('fa-times');
-      } else {
-        toggleIcon.classList.remove('fa-times');
-        toggleIcon.classList.add('fa-bars');
-      }
-
-      topBar.classList.add('hidden');
-      mainNav.classList.replace('top-10', 'top-0');
-    });
-  </script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

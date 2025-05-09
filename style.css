@@ -1,0 +1,44 @@
+    /* Increased icon size */
+    .icon {
+        font-size: 22px; /* Adjusted icon size */
+        transition: 0.3s ;
+      }
+  
+      /* Hover effect */
+     
+      @media (max-width: 767px) {
+        #topBar {
+          display: none !important;
+        }
+        #mainNav {
+          top: 0 !important;
+        }
+      }
+
+
+
+      
+
+
+.highlight-frame {
+    position: relative;
+    padding: 1rem;
+  }
+  .highlight-frame::before,
+  .highlight-frame::after {
+    content: '';
+    position: absolute;
+    background: #facc15;
+  }
+  .highlight-frame::before {
+    height: 8px;
+    width: 80px;
+    top: 0;
+    left: 0;
+  }
+  .highlight-frame::after {
+    width: 8px;
+    height: 80px;
+    bottom: 0;
+    right: 0;
+  }
