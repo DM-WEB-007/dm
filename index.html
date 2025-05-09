@@ -19,7 +19,7 @@
   </script>
   <!-- Font Awesome CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-  
+
   <style>
     @media (max-width: 767px) {
       #topBar {
@@ -27,16 +27,6 @@
       }
       #mainNav {
         top: 0 !important;
-      }
-
-      /* Telegram Icon Styling */
-      .telegram-icon {
-        display: block; /* Show Telegram icon on small screens */
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 50%; /* Adjust as needed */
-        z-index: 10;
       }
     }
   </style>
@@ -65,54 +55,53 @@
     </div>
   </div>
 
-<!-- Main Navbar -->
-<nav id="mainNav" class="bg-white shadow fixed top-10 w-full z-40 transition-all duration-300">
-  <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center relative">
-    <!-- Logo -->
-    <div class="flex items-center gap-2">
-      <img src="img/logo.png" alt="DM007 Logo" class="w-[129px] h-auto mt-[10px]" />
+  <!-- Main Navbar -->
+  <nav id="mainNav" class="bg-white shadow fixed top-10 w-full z-40 transition-all duration-300">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center relative">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img src="img/logo.png" alt="DM007 Logo" class="w-[129px] h-auto mt-[10px]" />
+      </div>
+
+      <!-- Telegram Icon in the middle (mobile only) -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 md:hidden">
+        <a href="https://t.me/DMweb007" target="_blank">
+          <i class="fab fa-telegram-plane text-2xl text-blue-500"></i>
+        </a>
+      </div>
+
+      <!-- Menu Links -->
+      <ul class="hidden md:flex gap-6 text-lg text-black font-medium">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skill">Skill</a></li>
+      </ul>
+
+      <!-- Hamburger / Close Icon -->
+      <div class="md:hidden">
+        <button id="toggleMenuBtn" class="text-2xl focus:outline-none">
+          <i id="menuIcon" class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center gap-3">
+        <button class="border border-dark text-dark px-4 py-2 rounded hover:bg-dark hover:text-white transition">
+          Contact
+        </button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+          Ready Project
+        </button>
+        <button class="border border-black p-2 rounded hover:bg-gray-100">
+          🛒
+        </button>
+      </div>
     </div>
-
-    <!-- Telegram Icon in the middle -->
-    <div class="absolute left-1/2 transform -translate-x-1/2 md:hidden">
-      <a href="https://t.me/yourusername" target="t.me/DMweb007">
-        <i class="fab fa-telegram-plane text-3xl text-blue-500"></i> <!-- Smaller Telegram icon size -->
-      </a>
-    </div>
-
-    <!-- Menu Links -->
-    <ul class="hidden md:flex gap-6 text-lg text-black font-medium">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skill">Skill</a></li>
-    </ul>
-
-    <!-- Hamburger Icon -->
-    <div class="md:hidden">
-      <button id="toggleMenuBtn" class="text-2xl focus:outline-none">☰</button>
-    </div>
-
-    <!-- Action Buttons -->
-    <div class="hidden md:flex items-center gap-3">
-      <button class="border border-dark text-dark px-4 py-2 rounded hover:bg-dark hover:text-white transition">
-        Contact
-      </button>
-      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-        Ready Project
-      </button>
-      <button class="border border-black p-2 rounded hover:bg-gray-100">
-        🛒
-      </button>
-    </div>
-  </div>
-</nav>
-
-
+  </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="fixed top-0 right-0 w-3/4 bg-white shadow-lg z-40 h-full md:hidden transform translate-x-full transition-transform duration-300">
+  <div id="mobileMenu" class="fixed top-[72px] right-0 w-3/4 bg-white shadow-lg z-30 h-full md:hidden transform translate-x-full transition-transform duration-300">
     <div class="px-4 py-6 flex flex-col gap-6 text-lg text-black font-medium">
-      <button id="closeMenuBtn" class="text-2xl absolute top-4 right-4">×</button>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#skill">Skill</a>
@@ -137,12 +126,12 @@
     <p>This is the skill section.</p>
   </section>
 
-  <!-- Scroll Behavior Script -->
+  <!-- Scroll + Toggle Script -->
   <script>
     const topBar = document.getElementById('topBar');
     const mainNav = document.getElementById('mainNav');
     const toggleBtn = document.getElementById('toggleMenuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const menuIcon = document.getElementById('menuIcon');
     const mobileMenu = document.getElementById('mobileMenu');
     let lastScroll = 0;
 
@@ -165,15 +154,11 @@
       mobileMenu.classList.toggle('translate-x-0');
       topBar.classList.add('hidden');
       mainNav.classList.replace('top-10', 'top-0');
-    });
 
-    closeMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.add('translate-x-full');
-      mobileMenu.classList.remove('translate-x-0');
-      topBar.classList.remove('hidden');
-      mainNav.classList.replace('top-0', 'top-10');
+      // Toggle menu icon
+      menuIcon.classList.toggle('fa-bars');
+      menuIcon.classList.toggle('fa-times');
     });
   </script>
-
 </body>
 </html>
