@@ -49,15 +49,20 @@ const typewriter = new Typewriter(app, {
 });
 
 typewriter
-  .typeString('front-end developer')
+  .typeString('Front-end developer')
   .pauseFor(2000)
   .deleteAll()
-  .typeString('UI enthusiast')
+  .typeString('Web Developer')
   .pauseFor(2000)
   .deleteAll()
-  .typeString('React Developer')
+  .typeString('UI/UX Designer')
   .pauseFor(2000)
+  .deleteAll()
+  .typeString('YouTuber')
+  .pauseFor(2000)
+  .deleteAll()
   .start();
+
 new Swiper('.swiper', {
   loop: true,
   pagination: {
