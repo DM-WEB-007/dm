@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DM007 Header</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#007bff',
+            dark: '#0f0f2d'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans pt-36">
+  <style>
+    @media (max-width: 767px) {
+      #topBar {
+        display: none !important;
+      }
+      #mainNav {
+        top: 0 !important;
+      }
+    }
+  </style>
+  
+  <!-- Top Bar -->
+  <div id="topBar" class="bg-blue-100 text-sm fixed top-0 w-full z-50 transition-all duration-300 hidden md:block">
+    <div class="max-w-screen-xl mx-auto px-4 py-2 flex justify-between items-center">
+      <div class="flex items-center gap-4 text-dark">
+        <div class="flex items-center gap-1">
+          <span class="bg-dark text-white p-1 rounded">✉️</span>
+          <span>dmraihan0007@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="bg-dark text-white p-1 rounded">📞</span>
+          <span>+880 1300573753</span>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <a href="#" class="bg-dark text-white p-1 rounded">📘</a>
+        <a href="#" class="bg-dark text-white p-1 rounded">🔗</a>
+        <a href="#" class="bg-dark text-white p-1 rounded">▶️</a>
+        <a href="#" class="bg-dark text-white p-1 rounded">💬</a>
+        <a href="#" class="bg-dark text-white p-1 rounded">✈️</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav id="mainNav" class="bg-white shadow fixed top-10 w-full z-40 transition-all duration-300">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img src="img/logo.png" alt="DM007 Logo" class="w-[129px] h-auto mt-[10px]" />
+      </div>
+      <!-- Menu Links -->
+      <ul class="hidden md:flex gap-6 text-lg text-black font-medium">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skill">Skill</a></li>
+      </ul>
+
+      <!-- Hamburger Icon -->
+      <div class="md:hidden">
+        <button id="toggleMenuBtn" class="text-2xl focus:outline-none">☰</button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center gap-3">
+        <button class="border border-dark text-dark px-4 py-2 rounded hover:bg-dark hover:text-white transition">
+          Contact
+        </button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+          Ready Project
+        </button>
+        <button class="border border-black p-2 rounded hover:bg-gray-100">
+          🛒
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed top-0 right-0 w-3/4 bg-white shadow-lg z-40 h-full md:hidden transform translate-x-full transition-transform duration-300">
+    <div class="px-4 py-6 flex flex-col gap-6 text-lg text-black font-medium">
+      <button id="closeMenuBtn" class="text-2xl absolute top-4 right-4">×</button>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skill">Skill</a>
+      <a href="#">Contact</a>
+      <a href="#">Projects</a>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <section id="home" class="max-w-screen-xl mx-auto px-4 py-20">
+    <h1 class="text-4xl font-bold mb-4">Welcome to Home</h1>
+    <p>This is the home section of your site.</p>
+  </section>
+
+  <section id="about" class="max-w-screen-xl mx-auto px-4 py-20 bg-gray-100">
+    <h2 class="text-3xl font-bold mb-4">About</h2>
+    <p>This is the about section.</p>
+  </section>
+
+  <section id="skill" class="max-w-screen-xl mx-auto px-4 py-20">
+    <h2 class="text-3xl font-bold mb-4">Skill</h2>
+    <p>This is the skill section.</p>
+  </section>
+
+  <!-- Scroll Behavior Script -->
+  <script>
+    const topBar = document.getElementById('topBar');
+    const mainNav = document.getElementById('mainNav');
+    const toggleBtn = document.getElementById('toggleMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > lastScroll && currentScroll > 50) {
+        topBar.classList.add('opacity-0', 'pointer-events-none');
+        mainNav.classList.replace('top-10', 'top-0');
+      } else {
+        topBar.classList.remove('opacity-0', 'pointer-events-none');
+        mainNav.classList.replace('top-0', 'top-10');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('translate-x-full');
+      mobileMenu.classList.toggle('translate-x-0');
+      topBar.classList.add('hidden');
+      mainNav.classList.replace('top-10', 'top-0');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+      topBar.classList.remove('hidden');
+      mainNav.classList.replace('top-0', 'top-10');
+    });
+  </script>
+
+</body>
+</html>
