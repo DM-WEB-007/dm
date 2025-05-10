@@ -41,3 +41,125 @@
     bottom: 0;
     right: 0;
   }
+
+
+
+
+
+
+.instagram__container {
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #3b82f6; /* blue-500 */
+  padding: 0.5rem 0;
+}
+
+.instagram__flex {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll 45s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .instagram__flex {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .instagram__flex {
+    gap: 0.5rem; /* Even smaller gap for very small screens */
+  }
+}
+
+
+
+
+
+
+/* Main Image styling for different screen sizes */
+#main-image {
+  width: 100%;
+  height: 16rem; /* Default for mobile */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
+  /* For small to medium screens */
+  #main-image {
+    height: 20rem;
+  }
+}
+
+@media (min-width: 768px) {
+  /* For larger screens */
+  #main-image {
+    height: 24rem;
+  }
+}
+
+/* Small Images styling */
+.small-image {
+  width: 4rem; /* Default for mobile */
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.small-image:hover {
+  opacity: 0.8; /* Hover effect */
+}
+
+/* Responsive for the small images */
+@media (min-width: 640px) {
+  .small-image {
+    width: 6rem; /* Small image size for small screens */
+    height: 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .small-image {
+    width: 6rem; /* Small image size for tablets */
+    height: 6rem;
+  }
+}
+
+/* Align small images horizontally on large screens */
+@media (min-width: 768px) {
+  .instagram__flex {
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .instagram__flex img {
+    margin-right: 0.5rem; /* Margin between small images */
+  }
+}
+
+/* Adjust padding and margins for better spacing */
+@media (max-width: 768px) {
+  .instagram__flex {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .instagram__flex img {
+    margin-right: 0; /* No right margin on smaller screens */
+  }
+}

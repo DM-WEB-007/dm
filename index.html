@@ -20,9 +20,9 @@
   </script>
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-
 </head>
-<body class="font-sans ">
+<body class="font-sans">
+
   <!-- Top Bar -->
   <div id="topBar" class="bg-blue-100 text-sm fixed top-0 w-full z-50 transition-all duration-300 hidden md:block">
     <div class="max-w-screen-xl mx-auto px-4 py-2 flex justify-between items-center">
@@ -56,27 +56,20 @@
 
       <!-- Telegram Icon in the middle -->
       <div class="absolute left-1/2 transform -translate-x-1/2 md:hidden" style="margin-left: 30px;">
-       
         <div class="flex items-center gap-4 text-dark text-lg">
-          <!-- Telegram Icon -->
           <a href="https://t.me/DMweb007" target="_blank">
             <i class="fab fa-telegram-plane text-2xl text-blue-500"></i>
           </a>
-          
-          <!-- YouTube Icon -->
           <a href="https://www.youtube.com" target="_blank">
             <i class="fab fa-youtube text-2xl text-red-600"></i>
           </a>
-          
-          <!-- Buy Me a Coffee Icon (Custom) -->
-          <a href="https://buymeacoffee.com/abcdesigner/extras" target="_blank" >
+          <a href="https://buymeacoffee.com/abcdesigner/extras" target="_blank">
             <img src="img/buymeacoffee.png" alt="Buy Me a Coffee" style="max-height: 24px; max-width: 24px; object-fit: cover;" />
           </a>
         </div>
       </div>
 
-
-      <!-- Hamburger/X Toggle -->
+      <!-- Hamburger Toggle -->
       <div class="md:hidden">
         <button id="toggleMenuBtn" class="text-2xl font-bold focus:outline-none">
           <i id="toggleIcon" class="fas fa-bars"></i>
@@ -121,17 +114,10 @@
 
 
 
-
-
-
-
-
-<!-- Home Page -->
-
-
-
+  
+  <!-- Home Section -->
 <!-- Home Section -->
-<section id="home" class="pt-24 md:pt-24 lg:pt-40 flex items-center justify-center bg-white">
+<section id="home" class="relative pt-24 md:pt-24 lg:pt-40 flex items-center justify-center bg-white" style="min-height: 100vh; background-color: #E5F5FF;">
   <div class="max-w-7xl w-full mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
     
     <!-- Left Content -->
@@ -188,35 +174,105 @@
       </div>
     </div>
   </div>
+
+<div class="w-full overflow-hidden absolute bottom-0 bg-white py-2 mt-4 sm:mt-4" style="background-color: #74BEED;">
+  <div class="instagram__flex">
+    <div class="flex items-center gap-4">
+      <i class="fab fa-html5 text-orange-600 text-3xl"></i> HTML
+    </div>
+    <div class="flex items-center gap-4">
+      <i class="fab fa-css3-alt text-blue-600 text-3xl"></i> CSS
+    </div>
+    <div class="flex items-center gap-4">
+      <i class="fab fa-js text-yellow-400 text-3xl"></i> JavaScript
+    </div>
+    <div class="flex items-center gap-4">
+      <i class="fab fa-react text-blue-400 text-3xl"></i> React
+    </div>
+    <div class="flex items-center gap-4">
+      <i class="fab fa-node text-green-600 text-3xl"></i> Node.js
+    </div>
+    <div class="flex items-center gap-4">
+      <i class="fas fa-database text-purple-700 text-3xl"></i> MongoDB
+    </div>
+    <div class="flex items-center gap-4">
+      <i class="fab fa-python text-yellow-500 text-3xl"></i> Python
+    </div>
+    <div class="flex items-center gap-4">
+      <i class="fab fa-github text-gray-700 text-3xl"></i> GitHub
+    </div>
+    <div class="flex items-center gap-4">
+      <i class="fab fa-angular text-red-600 text-3xl"></i> Angular
+    </div>
+  </div>
+</div>
+
+
+
 </section>
 
 
 
 
 
+<!-- About -->
+<section id="about" class="bg-white py-16">
+  <!-- Heading: Centered "About Me" -->
+  <h2 class="text-4xl font-extrabold text-indigo-900 mb-8 text-center">About Me</h2>
 
-
-
-
-
-
-  <section id="about" class="max-w-screen-xl mx-auto px-4 py-20 bg-gray-100">
-    <h2 class="text-3xl font-bold mb-4">About</h2>
-    <p>This is the about section.</p>
-  </section>
-
-  <section id="skill" class="max-w-screen-xl mx-auto px-4 py-20">
-    <h2 class="text-3xl font-bold mb-4">Skill</h2>
-    <p>This is the skill section.</p>
-  </section>
-
-  <!-- Scroll and Toggle Script -->
-   <!-- Swiper Carousel Script -->
+  <div class="max-w-7xl w-full mx-auto px-6 flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
     
-<script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
+    <!-- Left Side: Main Image and Small Clickable Images -->
+    <div class="md:w-1/2 flex flex-col items-center">
+      <!-- Main Picture -->
+      <div class="w-full max-w-md">
+        <img id="main-image" src="img/p.png" alt="Main Picture" class="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-lg" />
+      </div>
 
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <!-- Small Pictures -->
+      <div class="flex gap-4 mt-4 justify-center flex-wrap md:flex-nowrap">
+        <img src="img/p.png" alt="Small Image 1" class="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-lg cursor-pointer hover:opacity-80" onclick="changeMainImage('img/p.png')" />
+        <img src="img/p.png" alt="Small Image 2" class="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-lg cursor-pointer hover:opacity-80" onclick="changeMainImage('img/p.png')" />
+        <img src="img/2.jpeg" alt="Small Image 3" class="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-lg cursor-pointer hover:opacity-80" onclick="changeMainImage('img/2.jpeg')" />
+        <img src="img/1.jpeg" alt="Small Image 4" class="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-lg cursor-pointer hover:opacity-80" onclick="changeMainImage('img/1.jpeg')" />
+      </div>
+    </div>
+
+    <!-- Right Side: Who I Am Section -->
+    <div class="md:w-1/2 space-y-6">
+      <h3 class="text-3xl font-semibold text-indigo-900">Who I Am</h3>
+      <p class="text-lg text-gray-700">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat magna non urna elementum, at efficitur nisi cursus. Sed efficitur, odio ut ultricies gravida, metus ex faucibus nunc, vel tincidunt felis nisi sed augue. Curabitur tincidunt felis in facilisis gravida.
+      </p>
+      <p class="text-lg text-gray-700">
+        Fusce mollis mi nec lacus tincidunt, eget vehicula tortor consectetur. Integer egestas, sapien id laoreet aliquam, nisl nulla tempor felis, nec fermentum dui eros non ante. Nunc feugiat metus ac gravida rhoncus.
+      </p>
+      <p class="text-lg text-gray-700">
+        Donec vulputate purus et arcu vehicula, sit amet convallis libero fermentum. Nulla facilisi. Cras vehicula dolor vel orci efficitur maximus. Duis mollis nisl a turpis eleifend, id tempus tortor scelerisque.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // JavaScript function to change main image on small image click
+  function changeMainImage(imageSrc) {
+    document.getElementById('main-image').src = imageSrc;
+  }
+</script>
+
+
+
+
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
