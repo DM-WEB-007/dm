@@ -60,7 +60,7 @@
   display: flex;
   gap: 2rem;
   width: max-content;
-  animation: scroll 45s linear infinite;
+  animation: scroll 10s linear infinite;
 }
 
 @keyframes scroll {
@@ -90,117 +90,49 @@
 
 
 
-/* Main Image styling for different screen sizes */
-#main-image {
-  width: 100%;
-  height: 16rem; /* Default for mobile */
-  object-fit: cover;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+/* Center the section title */
+.service-section-2 .section-header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
 }
 
-@media (min-width: 640px) {
-  /* For small to medium screens */
-  #main-image {
-    height: 20rem;
-  }
+.service-section-2 .section-title {
+  display: inline-block;
+  font-size: 36px;
+  position: relative;
 }
 
-@media (min-width: 768px) {
-  /* For larger screens */
-  #main-image {
-    height: 24rem;
-  }
+/* Add underline using ::after */
+.service-section-2 .section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #b7ff00;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
-/* Small Images styling */
-.small-image {
-  width: 4rem; /* Default for mobile */
-  height: 4rem;
-  object-fit: cover;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.small-image:hover {
-  opacity: 0.8; /* Hover effect */
-}
-
-/* Responsive for the small images */
-@media (min-width: 640px) {
-  .small-image {
-    width: 6rem; /* Small image size for small screens */
-    height: 6rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .small-image {
-    width: 6rem; /* Small image size for tablets */
-    height: 6rem;
-  }
-}
-
-/* Align small images horizontally on large screens */
-@media (min-width: 768px) {
-  .instagram__flex {
-    justify-content: center;
-    flex-wrap: nowrap;
-  }
-  .instagram__flex img {
-    margin-right: 0.5rem; /* Margin between small images */
-  }
-}
-
-
-
-
-
-
-.service-section h3 {
-  margin: 0;
-}
-
-.container {
-  width: min(1230px, 100% - 120px);
-  margin-inline: auto;
-}
 
 .d-grid {
   display: grid !important;
 }
 
-main section.service-section-2 .section-body {
+.service-section-2 .section-body {
   position: relative;
   padding-bottom: 66px;
   gap: 27px;
 }
 
-/* For screens 992px and larger (2 columns layout) */
 @media only screen and (min-width: 992px) {
-  main section.service-section-2 .section-body {
+ .service-section-2 .section-body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* For screens between 400px and 992px (1 column layout) */
-@media (min-width: 400px) {
-  .service-section-2 .section-body {
-    width: 100%;
-  }
-  
-}
-@media (min-width: 360px) {
-  .service-section-2 .section-body {
-   
-  }
-  
-}
-
-
-
-main section.service-section-2 .section-body .card {
+.service-section-2 .section-body .card {
   background: linear-gradient(90deg, #122136 0%, #848794 100%);
   color: #fff;
   padding: 38px 18px 38px 29px;
@@ -209,13 +141,19 @@ main section.service-section-2 .section-body .card {
   transition: border-radius 0.3s;
 }
 
-main section.service-section-2 .section-body .card * {
+.service-section-2 .section-body .card * {
   z-index: 3;
 }
 
 
 
-main section.service-section-2 .section-body .card .card-title {
+@media only screen and (min-width: 1400px) {
+  .service-section-2 .section-body .card {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+.service-section-2 .section-body .card .card-title {
   font-size: 32px;
   background: linear-gradient(90deg, #b7ff00 0%, #1e8f51 100%);
   background-clip: text;
@@ -224,16 +162,16 @@ main section.service-section-2 .section-body .card .card-title {
   text-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.6901960784);
 }
 
-main section.service-section-2 .section-body .card .card-body {
+.service-section-2 .section-body .card .card-body {
   height: 127px;
   overflow: visible;
 }
 
-main section.service-section-2 .section-body .card .card-body img {
+.service-section-2 .section-body .card .card-body img {
   transition: all 1.5s ease;
 }
 
-main section.service-section-2 .section-body .card .arrow {
+.service-section-2 .section-body .card .arrow {
   width: 25px;
   position: absolute;
   inset-block: 0;
@@ -244,7 +182,7 @@ main section.service-section-2 .section-body .card .arrow {
   transition: all 1.5s ease;
 }
 
-main section.service-section-2 .section-body .card:after {
+.service-section-2 .section-body .card:after {
   position: absolute;
   content: "";
   top: 0;
@@ -258,34 +196,34 @@ main section.service-section-2 .section-body .card:after {
   opacity: 0;
 }
 
-main section.service-section-2 .section-body .card:hover {
+.service-section-2 .section-body .card:hover {
   border-radius: 10px;
 }
 
-main section.service-section-2 .section-body .card:hover:after {
+.service-section-2 .section-body .card:hover:after {
   opacity: 1;
 }
 
-main section.service-section-2 .section-body .card:hover .card-body img {
+.service-section-2 .section-body .card:hover .card-body img {
   transform: perspective(300px) rotateY(-40deg) scaleZ(5);
 }
 
-main section.service-section-2 .section-body .card:hover .arrow {
+.service-section-2 .section-body .card:hover .arrow {
   width: 52px;
 }
 
-main section.recent-project .section-header {
+.recent-project .section-header {
   margin-bottom: 30px;
 }
 
-main section.recent-project .section-header .section-title::after {
+.recent-project .section-header .section-title::after {
   background: url("../images/yellow-line-service.png") no-repeat center;
   width: 100%;
   height: 30px;
   bottom: -20px;
 }
 
-main section.recent-project .section-header .section-text {
+.recent-project .section-header .section-text {
   margin-top: 30px;
   font-size: 20px;
 }

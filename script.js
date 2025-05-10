@@ -74,21 +74,6 @@ new Swiper('.swiper', {
 
 
 
-// const marqueeTrack = document.getElementById('marqueeTrack');
-
-// let contentWidth = marqueeTrack.scrollWidth; // Get the width of the marquee track (both sets)
-// let containerWidth = marqueeTrack.offsetWidth; // Get the visible width of the container
-
-// // Ensure the marquee track starts from the beginning and loops infinitely
-// marqueeTrack.style.animation = `marquee ${contentWidth / 50}s linear infinite`;
-
-// marqueeTrack.addEventListener('animationiteration', () => {
-//   // Reset the position of the marquee when the animation completes one loop
-//   marqueeTrack.style.transform = 'translateX(0)';
-// });
-
-
-
 
 
 const instagram = document.querySelector(".instagram__flex");
